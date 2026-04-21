@@ -1,0 +1,259 @@
+.face-expression-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2.5rem;
+  padding: 2rem;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 25%, #f093fb 50%, #4facfe 75%, #00f2fe 100%);
+  background-attachment: fixed;
+  position: relative;
+  overflow: hidden;
+}
+
+.face-expression-container::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -10%;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.05) 0%, transparent 70%);
+  border-radius: 50%;
+  animation: float 22s ease-in-out infinite;
+}
+
+.face-expression-container::after {
+  content: '';
+  position: absolute;
+  bottom: -30%;
+  left: -5%;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.04) 0%, transparent 70%);
+  border-radius: 50%;
+  animation: float 28s ease-in-out infinite reverse;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(40px); }
+}
+
+.buttons-container {
+  display: flex;
+  gap: 1.2rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  position: relative;
+  z-index: 2;
+}
+
+.video-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 500px;
+  position: relative;
+  z-index: 1;
+}
+
+.video-feed {
+  width: 100%;
+  max-width: 500px;
+  border-radius: 24px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25),
+              0 0 1px rgba(255, 255, 255, 0.3) inset;
+  display: block;
+  background: #000;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.emotion-display {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 2rem 1.5rem;
+  border-radius: 24px 24px 0 0;
+  color: white;
+  text-align: center;
+  background: rgba(0, 0, 0, 0.6);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.emotion-display h2 {
+  margin: 0;
+  font-size: 2.8rem;
+  font-weight: 900;
+  text-transform: capitalize;
+  text-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+  animation: emotionPulse 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@keyframes emotionPulse {
+  0% {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.detect-btn {
+  padding: 1.1rem 2.8rem;
+  background: white;
+  color: #667eea;
+  border: none;
+  border-radius: 50px;
+  font-size: 1.05rem;
+  font-weight: 800;
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.detect-btn:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+}
+
+.detect-btn:active {
+  transform: translateY(-1px);
+}
+
+.detect-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.turkey-btn {
+  padding: 1.1rem 2.2rem;
+  background: #D2691E;
+  color: white;
+  border: none;
+  border-radius: 50px;
+  font-size: 1rem;
+  font-weight: 800;
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 8px 25px rgba(210, 105, 30, 0.3);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.turkey-btn:hover {
+  transform: translateY(-4px) scale(1.05);
+  box-shadow: 0 15px 40px rgba(210, 105, 30, 0.4);
+  background: #B8510F;
+}
+
+.turkey-btn:active {
+  transform: translateY(-1px);
+}
+
+.turkey-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.turkish-btn {
+  padding: 1.1rem 2.2rem;
+  background: #C60C30;
+  color: white;
+  border: none;
+  border-radius: 50px;
+  font-size: 1rem;
+  font-weight: 800;
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 8px 25px rgba(198, 12, 48, 0.3);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.turkish-btn:hover {
+  transform: translateY(-4px) scale(1.05);
+  box-shadow: 0 15px 40px rgba(198, 12, 48, 0.4);
+  background: #A00A25;
+}
+
+.turkish-btn:active {
+  transform: translateY(-1px);
+}
+
+.turkish-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* Emotion-specific colors */
+.emotion-display {
+  /* Default happy color */
+  background-color: #FFD700;
+  color: #333;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .face-expression-container {
+    padding: 1rem;
+    gap: 1.5rem;
+  }
+
+  .video-feed {
+    max-width: 100%;
+    max-height: 70vh;
+  }
+
+  .emotion-display h2 {
+    font-size: 2rem;
+  }
+
+  .detect-btn {
+    padding: 0.8rem 2rem;
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .face-expression-container {
+    padding: 1rem;
+    gap: 1rem;
+  }
+
+  .emotion-display h2 {
+    font-size: 1.5rem;
+  }
+
+  .detect-btn {
+    padding: 0.7rem 1.5rem;
+    font-size: 0.9rem;
+  }
+}
+
+/* Success animation for emotion detection */
+@keyframes successPulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(255, 215, 0, 0.7);
+  }
+  70% {
+    box-shadow: 0 0 0 15px rgba(255, 215, 0, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(255, 215, 0, 0);
+  }
+}
+
+.video-feed.detected {
+  animation: successPulse 0.6s ease-out;
+}
